@@ -1,5 +1,7 @@
 from flask import Flask
 
+from PomoApp import page
+
 def create_app():
     """
     Create Flask application using the app factory pattern
@@ -11,6 +13,8 @@ def create_app():
     app.config.from_object('config.settings')
     app.config.from_pyfile('settings.py', silent=True)
 
+    app.register_blueprint(page)
+    
     @app.route('/')
     def index():
         """
