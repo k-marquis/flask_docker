@@ -1,6 +1,6 @@
 from flask import Flask
 
-from PomoApp import page
+from PomoApp.blueprints.page import page
 
 def create_app():
     """
@@ -15,13 +15,13 @@ def create_app():
 
     app.register_blueprint(page)
     
-    @app.route('/')
-    def index():
-        """
-        Render a Hello World response to test the local run.
+    # @app.route('/')
+    # def index():
+    #     """
+    #     Render a Hello World response to test the local run.
 
-        :return: Flask response
-        """
-        return app.config['HELLO']
+    #     :return: Flask response
+    #     """
+    #     return app.config['HELLO']
 
     return app
