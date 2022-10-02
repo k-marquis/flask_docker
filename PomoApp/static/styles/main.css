@@ -25,8 +25,19 @@ html {
   
   /* Margin and padding
   -------------------------------------------------- */
+  
+  
+  
   .lg-margin-bottom {
     margin-bottom: 60px;
+  }
+  
+  .md-margin-bottom {
+    margin-bottom: 40px;
+  }
+  
+  .sm-margin-bottom {
+    margin-bottom: 20px;
   }
   
   .lg-margin-top {
