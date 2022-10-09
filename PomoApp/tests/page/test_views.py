@@ -1,5 +1,5 @@
 from flask import url_for
-
+import re
 
 class TestPage(object):
     def test_home_page(self, client):
@@ -16,3 +16,10 @@ class TestPage(object):
         """ Privacy page should respond with a success 200. """
         response = client.get(url_for('page.privacy'))
         assert response.status_code == 200
+    
+    def test_faq_page(self, client):
+        """ Privacy page should respond with a success 200. """
+        response = client.get(url_for('page.faq'))
+        #assert response.status_code == 200
+        assert re.search(r"<title>\s*(.+?)\s*<\/title>", str(response.data))
+        

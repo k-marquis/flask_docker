@@ -1,1 +1,1 @@
-from PomoApp.blueprints.page.views import page
+from pomoapp.blueprints.page.views import page

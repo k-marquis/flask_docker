@@ -1,8 +1,8 @@
 from flask import Flask
 
-from PomoApp.blueprints.page import page
+from pomoapp.blueprints.page import page
 
-def create_app():
+def create_app(settings_override=None):
     """
     Create Flask application using the app factory pattern
 
@@ -13,15 +13,9 @@ def create_app():
     app.config.from_object('config.settings')
     app.config.from_pyfile('settings.py', silent=True)
 
-    app.register_blueprint(page)
-    
-    # @app.route('/')
-    # def index():
-    #     """
-    #     Render a Hello World response to test the local run.
+    if settings_override:
+        app.config.update(settings_override)
 
-    #     :return: Flask response
-    #     """
-    #     return app.config['HELLO']
+    app.register_blueprint(page)
 
     return app

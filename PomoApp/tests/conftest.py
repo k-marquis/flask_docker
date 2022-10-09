@@ -1,9 +1,7 @@
 import pytest
+from pomoapp.app import create_app
 
-from PomoApp.app import create_app
-
-
-@pytest.yield_fixture(scope='session')
+@pytest.fixture(scope='session')
 def app():
     """
     Setup our flask test app, this only gets executed once.
@@ -26,7 +24,7 @@ def app():
     ctx.pop()
 
 
-@pytest.yield_fixture(scope='function')
+@pytest.fixture(scope='function')
 def client(app):
     """
     Setup an app client, this gets executed for each test function.

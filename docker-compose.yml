@@ -7,10 +7,10 @@ services:
       gunicorn -b 0.0.0.0:8000
         --access-logfile -
         --reload
-        "PomoApp.app:create_app()"
+        "pomoapp.app:create_app()"
     environment:
       PYTHONUNBUFFERED: 'true'
     volumes:
-      - '.:/PomoApp'
+      - '.:/pomoapp'
     ports:
       - '8000:8000'
