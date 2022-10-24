@@ -2,15 +2,16 @@ from setuptools import setup
 
 setup(
     name='PomoApp-CLI',
-    version='1.0',
+    version='0.1.0',
     packages=['cli','cli.commands'],
     include_package_data=True,
     install_requires=[
-        'click',
+        'Click',
     ],
-    entry_point="""
-        [console_scripts]
-        pomoapp=cli.cli:cli
-    """,    
+    entry_points={
+        'console_scripts': [
+            'pomoapp=cli.cli:cli',
+        ],
+    },
 )
 
